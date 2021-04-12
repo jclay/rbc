@@ -376,7 +376,7 @@ def test_loadtime_udf(omnisci):
     # sample_udf.cpp` option where the .cpp file defines `udf_diff`
     try:
         desrc, result = omnisci.sql_execute(
-            'select i4, udf_diff2(i4, i4) from {omnisci.table_name}'
+            'select i4, udf_diff(i4, i4) from {omnisci.table_name}'
             .format(**locals()))
     except Exception as msg:
         assert 'No match found for function signature udf_diff' in str(msg)
